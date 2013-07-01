@@ -5,11 +5,12 @@ Run
 ---
 
 Just clone the project and run `index.html`.
+This app is accesible [here][1].
 
 File API
 --------
 
-HTML5 finally provides a standard way to interact with local files, via the [File API][1]
+HTML5 finally provides a standard way to interact with local files, via the [File API][2]
 
 
 FileReader includes four options for reading a file, asynchronously:
@@ -22,8 +23,8 @@ FileReader includes four options for reading a file, asynchronously:
 For our example, we want to read a CSV file, so we can read it as text. And perfom data processing after in `processData(csv)` function.
 
 
-You can read this [post][2] for more details.
+You can read this [post][3] for more details.
 
-
-[1]: http://www.w3.org/TR/file-upload/
-[2]: http://mounirmesselmeni.github.io/2012/11/20/javascript-csv/
+[1]: http://mounirmesselmeni.github.io/html-fileapi
+[2]: http://www.w3.org/TR/file-upload/
+[3]: http://mounirmesselmeni.github.io/2012/11/20/javascript-csv/
