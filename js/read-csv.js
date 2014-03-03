@@ -10,11 +10,11 @@ function handleFiles(files) {
 
 function getAsText(fileToRead) {
 	var reader = new FileReader();
-	// Read file into memory as UTF-8      
-	reader.readAsText(fileToRead);
 	// Handle errors load
 	reader.onload = loadHandler;
 	reader.onerror = errorHandler;
+	// Read file into memory as UTF-8      
+	reader.readAsText(fileToRead);
 }
 
 function loadHandler(event) {
@@ -25,13 +25,8 @@ function loadHandler(event) {
 function processData(csv) {
     var allTextLines = csv.split(/\r\n|\n/);
     var lines = [];
-    for (var i=0; i<allTextLines.length; i++) {
-        var data = allTextLines[i].split(',');
-            var tarr = [];
-            for (var j=0; j<data.length; j++) {
-                tarr.push(data[j]);
-            }
-            lines.push(tarr);
+    while (allTextLines.length) {
+        lines.push(allTextLines.shift().split(','));
     }
 	console.log(lines);
 	drawOutput(lines);
