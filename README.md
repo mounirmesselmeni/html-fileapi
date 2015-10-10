@@ -27,4 +27,4 @@ You can read this [post][3] for more details.
 
 [1]: http://mounirmesselmeni.github.io/html-fileapi
 [2]: http://www.w3.org/TR/file-upload/
-[3]: http://mounirmesselmeni.github.io/2012/11/20/javascript-csv/
+[3]: http://mounirmesselmeni.github.io/2012/11/20/reading-csv-file-with-javascript-and-html5-file-api
