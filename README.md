@@ -5,7 +5,7 @@ Run
 ---
 
 Just clone the project and run `index.html`.
-This app is accesible [here][1].
+This app is accessible [here][1].
 
 File API
 --------
@@ -20,7 +20,7 @@ FileReader includes four options for reading a file, asynchronously:
 - `FileReader.readAsDataURL(Blob|File)` - The result property will contain the file/blob's data encoded as a data URL.
 - `FileReader.readAsArrayBuffer(Blob|File)` - The result property will contain the file/blob's data as an ArrayBuffer object.
 
-For our example, we want to read a CSV file, so we can read it as text. And perfom data processing after in `processData(csv)` function.
+For our example, we want to read a CSV file, so we can read it as text. And perform data processing after in `processData(csv)` function.
 
 
 You can read this [post][3] for more details.
