@@ -26,7 +26,7 @@ function processData(csv) {
     var allTextLines = csv.split(/\r\n|\n/);
     var lines = [];
     while (allTextLines.length) {
-        lines.push(allTextLines.shift().split(','));
+        lines.push(clearLine(allTextLines.shift());
     }
 	console.log(lines);
 	drawOutput(lines);
@@ -34,7 +34,7 @@ function processData(csv) {
 
 function errorHandler(evt) {
 	if(evt.target.error.name == "NotReadableError") {
-		alert("Canno't read file !");
+		alert("Cannot read file!");
 	}
 }
 
@@ -50,4 +50,36 @@ function drawOutput(lines){
 		}
 	}
 	document.getElementById("output").appendChild(table);
+}
+
+/**
+ * Prevents the splitting of items with double quotes.
+ * @param  {string} line line string
+ * @return {string}      correctly splitted string
+ */
+function clearLine(line) {
+        var splitline = line.split(',')
+        var new_string = []
+        var separated_string = []
+        var is_separated_string = false
+        for (v in splitline) {
+                var item = splitline[v]
+                if (item.includes('"')) {
+                        separated_string.push(item.replace('"', ''))
+                        if (!is_separated_string) {
+                                is_separated_string = true
+                        } else {
+                                is_separated_string = false
+                                new_string.push(separated_string.join(', '))
+                                separated_string = []
+                        }
+                } else {
+                        if (is_separated_string) {
+                                separated_string.push(item)
+                        } else if (!is_separated_string) {
+                                new_string.push(item)
+                        }
+                }
+        }
+        return new_string
 }
