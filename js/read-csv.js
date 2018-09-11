@@ -71,3 +71,29 @@ function drawOutput(lines){
 	}
 	document.getElementById("output").appendChild(table);
 }
+
+//draw the table, if first line contains headinging
+function drawOutputAsObj(lines){
+	//Clear previous data
+	document.getElementById("output").innerHTML = "";
+	var table = document.createElement("table");
+	
+	//for the table headings
+	var tableHeader = table.insertRow(-1);
+ 	Object.keys(lines[0]).forEach(function(key){
+ 		var el = document.createElement("TH");
+		el.innerHTML = key;		
+		tableHeader.appendChild(el);
+	});	
+	
+	//the data
+	for (var i = 0; i < lines.length; i++) {
+		var row = table.insertRow(-1);
+		Object.keys(lines[0]).forEach(function(key){
+			var data = row.insertCell(-1);
+			data.appendChild(document.createTextNode(lines[i][key]));
+		});
+	}
+	document.getElementById("output").appendChild(table);
+}
+
