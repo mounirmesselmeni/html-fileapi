@@ -49,7 +49,7 @@ function processDataAsObj(csv){
         lines.push(obj);
     }
         console.log(lines);
-	//drawOutput(lines);
+	drawOutputAsObj(lines);
 }
 
 function errorHandler(evt) {
